@@ -437,14 +437,21 @@ public class SvensonDocGenerator
         buf.append(" ").append( describe(cls, null, cls, cfg, ctx, true)).append("\n\n");
 
         final TypeDoc typeDoc = typeDocs.get(cls.getName());
+
         if (typeDoc == null)
         {
             buf.append("*No documentation*\n");
         }
         else
         {
-            buf.append("name | description\n");
-            buf.append("-----|------------\n");
+            final String typeDescription = typeDoc.getDescription();
+            if (typeDescription != null)
+            {
+                buf.append(typeDescription).append("\n\n");
+            }
+
+            buf.append("value | description\n");
+            buf.append("------|------------\n");
 
             typeDoc.getPropertyDocs().forEach(fd -> {
                 buf.append(fd.getName()).append(" | ").append(fd.getDescription()).append("\n");

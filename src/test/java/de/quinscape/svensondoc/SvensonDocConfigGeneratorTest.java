@@ -182,28 +182,37 @@ class SvensonDocConfigGeneratorTest
                 "\n" +
                 "Bar model\n" +
                 "\n" +
-                "name | type | description \n" +
-                "-----|------|-------------\n" +
+                "property | type | description \n" +
+                "---------|------|-------------\n" +
                 "barValues | Map of BarValue | Map of bar values\n" +
                 "# BarValue\n" +
                 "\n" +
                 "Mapped value within bar.\n" +
                 "\n" +
-                "name | type | description \n" +
-                "-----|------|-------------\n" +
+                "property | type | description \n" +
+                "---------|------|-------------\n" +
                 "name | String | Name of bar value\n" +
                 "# Foo\n" +
                 "\n" +
                 "Foo model\n" +
                 "\n" +
-                "name | type | description \n" +
-                "-----|------|-------------\n" +
+                "property | type | description \n" +
+                "---------|------|-------------\n" +
                 "name | String | Name of foo\n" +
                 "strings | List of String | \n" +
                 "ints | Map of Integer | \n" +
                 "value | BarValue | Embedde bar value\n" +
                 "bars | List of Bar | List of bars in foo\n" +
-                "num | String | Num value of foo\n"));
+                "num | String | Num value of foo\n" +
+                "# TestEnum\n" +
+                "\n" +
+                "Enum example\n" +
+                "\n" +
+                "value | description\n" +
+                "------|------------\n" +
+                "AAA | Option A\n" +
+                "BBB | Option B\n" +
+                "CCC | Option C\n"));
 
         }
         finally
@@ -257,28 +266,37 @@ class SvensonDocConfigGeneratorTest
                 "\n" +
                 "Bar model\n" +
                 "\n" +
-                "name | type | description \n" +
-                "-----|------|-------------\n" +
+                "property | type | description \n" +
+                "---------|------|-------------\n" +
                 "barValues | Map of [BarValue](#dequinscapesvensondoctestmodelbarvalue) | Map of bar values\n" +
                 "# de.quinscape.svensondoc.testmodel.BarValue\n" +
                 "\n" +
                 "Mapped value within bar.\n" +
                 "\n" +
-                "name | type | description \n" +
-                "-----|------|-------------\n" +
+                "property | type | description \n" +
+                "---------|------|-------------\n" +
                 "name | String | Name of bar value\n" +
                 "# de.quinscape.svensondoc.testmodel.Foo\n" +
                 "\n" +
                 "Foo model\n" +
                 "\n" +
-                "name | type | description \n" +
-                "-----|------|-------------\n" +
+                "property | type | description \n" +
+                "---------|------|-------------\n" +
                 "name | String | Name of foo\n" +
                 "strings | List of String | \n" +
                 "ints | Map of Integer | \n" +
                 "value | [BarValue](#dequinscapesvensondoctestmodelbarvalue) | Embedde bar value\n" +
                 "bars | List of [Bar](#dequinscapesvensondoctestmodelbar) | List of bars in foo\n" +
-                "num | String | Num value of foo\n"));
+                "num | String | Num value of foo\n" +
+                "# de.quinscape.svensondoc.testmodel.TestEnum\n" +
+                "\n" +
+                "Enum example\n" +
+                "\n" +
+                "value | description\n" +
+                "------|------------\n" +
+                "AAA | Option A\n" +
+                "BBB | Option B\n" +
+                "CCC | Option C\n"));
 
         }
         finally
@@ -333,28 +351,37 @@ class SvensonDocConfigGeneratorTest
                 "\n" +
                 "Bar model\n" +
                 "\n" +
-                "name | type | description \n" +
-                "-----|------|-------------\n" +
+                "property | type | description \n" +
+                "---------|------|-------------\n" +
                 "barValues | Map of [BarValue](#barvalue) | Map of bar values\n" +
                 "# BarValue\n" +
                 "\n" +
                 "Mapped value within bar.\n" +
                 "\n" +
-                "name | type | description \n" +
-                "-----|------|-------------\n" +
+                "property | type | description \n" +
+                "---------|------|-------------\n" +
                 "name | String | Name of bar value\n" +
                 "# Foo\n" +
                 "\n" +
                 "Foo model\n" +
                 "\n" +
-                "name | type | description \n" +
-                "-----|------|-------------\n" +
+                "property | type | description \n" +
+                "---------|------|-------------\n" +
                 "name | String | Name of foo\n" +
                 "strings | List of String | \n" +
                 "ints | Map of Integer | \n" +
                 "value | [BarValue](#barvalue) | Embedde bar value\n" +
                 "bars | List of [Bar](#bar) | List of bars in foo\n" +
-                "num | String | Num value of foo\n"));
+                "num | String | Num value of foo\n" +
+                "# TestEnum\n" +
+                "\n" +
+                "Enum example\n" +
+                "\n" +
+                "value | description\n" +
+                "------|------------\n" +
+                "AAA | Option A\n" +
+                "BBB | Option B\n" +
+                "CCC | Option C\n"));
         }
         finally
         {
