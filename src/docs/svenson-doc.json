@@ -1,6 +1,3 @@
-## Example config
-
-```json 
 {
     "documents": [
         {
@@ -27,6 +24,3 @@
     "shortenTypes": true,
     "linkReference" : true
 }
-```
-
-The `svenson-doc.json` to generate this readme and the reference linked to it.

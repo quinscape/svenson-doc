@@ -62,6 +62,13 @@
             <artifactId>javaparser-core</artifactId>
             <version>3.16.1</version>
         </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>jcl-over-slf4j</artifactId>
+            <version>1.7.30</version>
+            <scope>compile</scope>
+        </dependency>
+
 
         <!-- Test dependencies -->
         <dependency>
@@ -88,13 +95,6 @@
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-engine</artifactId>
             <version>5.6.2</version>
-            <scope>test</scope>
-        </dependency>
-
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>jcl-over-slf4j</artifactId>
-            <version>1.7.30</version>
             <scope>test</scope>
         </dependency>
 
@@ -144,6 +144,40 @@
                     </execution>
                 </executions>
             </plugin>
+
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>1.5.0</version>
+                <executions>
+                    <execution>
+                        <id>generate-json-docs</id>
+                        <goals>
+                            <goal>java</goal>
+                        </goals>
+                        <phase>prepare-package</phase>
+                    </execution>
+                </executions>
+                <configuration>
+                    <mainClass>de.quinscape.svensondoc.SvensonDocGenerator</mainClass>
+                    <arguments>
+
+                        <argument>--config</argument>
+                        <argument>${project.basedir}/src/docs/svenson-doc.json</argument>
+
+                        <!-- Documentation for the standard Automaton logic implementations -->
+                        <argument>--source</argument>
+                        <argument>${project.basedir}/src/main/java</argument>
+
+                        <argument>--output</argument>
+                        <argument>${project.basedir}</argument>
+
+                        <argument>--snippets</argument>
+                        <argument>${project.basedir}/src/docs/md</argument>
+                    </arguments>
+                </configuration>
+            </plugin>
+
         </plugins>
     </build>
 
