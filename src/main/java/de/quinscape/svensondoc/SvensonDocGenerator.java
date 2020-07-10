@@ -490,8 +490,8 @@ public class SvensonDocGenerator
 
         final JSONClassInfo info = TypeAnalyzer.getClassInfo(objectSupport, cls);
 
-        buff.append("name | type | description \n");
-        buff.append("-----|------|-------------\n");
+        buff.append("property | type | description \n");
+        buff.append("---------|------|-------------\n");
 
         List<Prop> props = new ArrayList<>();
 

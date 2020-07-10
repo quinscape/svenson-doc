@@ -49,8 +49,8 @@ class SvensonDocConfigGeneratorTest
                 "\n" +
                 "Foo model\n" +
                 "\n" +
-                "name | type | description \n" +
-                "-----|------|-------------\n" +
+                "property | type | description \n" +
+                "---------|------|-------------\n" +
                 "name | String | Name of foo\n" +
                 "strings | List of String | \n" +
                 "ints | Map of Integer | \n" +
@@ -95,8 +95,8 @@ class SvensonDocConfigGeneratorTest
                 "\n" +
                 "Foo model\n" +
                 "\n" +
-                "name | type | description \n" +
-                "-----|------|-------------\n" +
+                "property | type | description \n" +
+                "---------|------|-------------\n" +
                 "name | String | Name of foo\n" +
                 "strings | List of String | \n" +
                 "ints | Map of Integer | \n" +
@@ -141,8 +141,8 @@ class SvensonDocConfigGeneratorTest
                 "\n" +
                 "Foo model\n" +
                 "\n" +
-                "name | type | description \n" +
-                "-----|------|-------------\n" +
+                "property | type | description \n" +
+                "---------|------|-------------\n" +
                 "name | String | Name of foo\n" +
                 "strings | List of String | \n" +
                 "ints | Map of Integer | \n" +
@@ -242,8 +242,8 @@ class SvensonDocConfigGeneratorTest
                 "\n" +
                 "Foo model\n" +
                 "\n" +
-                "name | type | description \n" +
-                "-----|------|-------------\n" +
+                "property | type | description \n" +
+                "---------|------|-------------\n" +
                 "name | String | Name of foo\n" +
                 "strings | List of String | \n" +
                 "ints | Map of Integer | \n" +
@@ -317,8 +317,8 @@ class SvensonDocConfigGeneratorTest
                 "\n" +
                 "Foo model\n" +
                 "\n" +
-                "name | type | description \n" +
-                "-----|------|-------------\n" +
+                "property | type | description \n" +
+                "---------|------|-------------\n" +
                 "name | String | Name of foo\n" +
                 "strings | List of String | \n" +
                 "ints | Map of Integer | \n" +
