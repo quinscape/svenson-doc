@@ -2,11 +2,14 @@ package de.quinscape.svensondoc.model;
 
 import java.util.List;
 
+/**
+ * Extracted Javadoc information.
+ */
 public class TypeDoc
 {
     private final String name;
     private String description;
-    private List<FieldDoc> fieldDocs;
+    private List<PropertyDoc> propertyDocs;
 
     public TypeDoc(String name)
     {
@@ -14,12 +17,18 @@ public class TypeDoc
     }
 
 
+    /**
+     * Fully qualified type name
+     */
     public String getName()
     {
         return name;
     }
 
 
+    /**
+     * Description extracted from Javadoc.
+     */
     public String getDescription()
     {
         return description;
@@ -32,14 +41,17 @@ public class TypeDoc
     }
 
 
-    public void setFieldDocs(List<FieldDoc> fieldDocs)
+    public void setPropertyDocs(List<PropertyDoc> propertyDocs)
     {
-        this.fieldDocs = fieldDocs;
+        this.propertyDocs = propertyDocs;
     }
 
 
-    public List<FieldDoc> getFieldDocs()
+    /**
+     * List of property docs for the type.
+     */
+    public List<PropertyDoc> getPropertyDocs()
     {
-        return fieldDocs;
+        return propertyDocs;
     }
 }

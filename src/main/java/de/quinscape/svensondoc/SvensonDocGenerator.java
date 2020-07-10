@@ -11,7 +11,7 @@ import com.github.javaparser.ast.body.TypeDeclaration;
 import com.github.javaparser.javadoc.Javadoc;
 import com.github.javaparser.utils.SourceRoot;
 import de.quinscape.svensondoc.model.DocumentConfig;
-import de.quinscape.svensondoc.model.FieldDoc;
+import de.quinscape.svensondoc.model.PropertyDoc;
 import de.quinscape.svensondoc.model.SvensonDocConfig;
 import de.quinscape.svensondoc.model.TypeDoc;
 import org.apache.commons.io.FileUtils;
@@ -278,11 +278,11 @@ public class SvensonDocGenerator
 
     private String findFieldDocs(TypeDoc typeDoc, String name)
     {
-        for (FieldDoc fieldDoc : typeDoc.getFieldDocs())
+        for (PropertyDoc propertyDoc : typeDoc.getPropertyDocs())
         {
-            if (fieldDoc.getName().equals(name))
+            if (propertyDoc.getName().equals(name))
             {
-                return fieldDoc.getDescription();
+                return propertyDoc.getDescription();
             }
         }
 
@@ -446,7 +446,7 @@ public class SvensonDocGenerator
             buf.append("name | description\n");
             buf.append("-----|------------\n");
 
-            typeDoc.getFieldDocs().forEach(fd -> {
+            typeDoc.getPropertyDocs().forEach(fd -> {
                 buf.append(fd.getName()).append(" | ").append(fd.getDescription()).append("\n");
             });
         }
@@ -595,7 +595,7 @@ public class SvensonDocGenerator
             typeDoc.setDescription(description);
         }
 
-        final List<FieldDoc> fieldDocs = new ArrayList<>();
+        final List<PropertyDoc> propertyDocs = new ArrayList<>();
         if (typeDecl.isEnumDeclaration())
         {
             EnumDeclaration enumDeclaration = (EnumDeclaration) typeDecl;
@@ -606,8 +606,8 @@ public class SvensonDocGenerator
                 {
                     final String description = decl.getJavadoc().get().getDescription().toText();
 
-                    fieldDocs.add(
-                        new FieldDoc(decl.getName().getIdentifier(), description)
+                    propertyDocs.add(
+                        new PropertyDoc(decl.getName().getIdentifier(), description)
                     );
                 }
             }
@@ -649,19 +649,19 @@ public class SvensonDocGenerator
                 final String fieldName = e.getKey();
                 final String description = e.getValue();
 
-                fieldDocs.add(
-                    new FieldDoc(fieldName, description)
+                propertyDocs.add(
+                    new PropertyDoc(fieldName, description)
                 );
 
             }
 
-            if (typeDoc.getDescription() == null && fieldDocs.size() == 0)
+            if (typeDoc.getDescription() == null && propertyDocs.size() == 0)
             {
                 return;
             }
         }
 
-        typeDoc.setFieldDocs(fieldDocs);
+        typeDoc.setPropertyDocs(propertyDocs);
         docs.put(typeDoc.getName(), typeDoc);
     }
 

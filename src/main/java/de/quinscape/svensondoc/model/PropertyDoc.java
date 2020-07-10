@@ -1,13 +1,16 @@
 package de.quinscape.svensondoc.model;
 
-public final class FieldDoc
+/**
+ * Extracted Javadoc for one property
+ */
+public final class PropertyDoc
 {
     private final String name;
 
     private final String description;
 
 
-    public FieldDoc(String name, String description)
+    public PropertyDoc(String name, String description)
     {
 
         this.name = name;
@@ -15,12 +18,18 @@ public final class FieldDoc
     }
 
 
+    /**
+     * Property name
+     */
     public String getName()
     {
         return name;
     }
 
 
+    /**
+     * Description extracted from Javadoc
+     */
     public String getDescription()
     {
         return description;
