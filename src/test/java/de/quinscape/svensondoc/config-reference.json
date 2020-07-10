@@ -1,0 +1,17 @@
+{
+    "documents": [
+        {
+            "name": "out.md",
+            "content" : [
+                "*"
+            ]
+        }
+    ],
+
+    "packages": [
+        "de.quinscape.svensondoc.testmodel"
+    ],
+
+    "shortenTitle": true,
+    "shortenTypes": true
+}

@@ -1,0 +1,25 @@
+{
+    "documents": [
+        {
+            "name": "out.md",
+            "content" : [
+                "test.md",
+                "de.quinscape.svensondoc.testmodel.Foo"
+            ]
+        },
+        {
+            "name": "reference.md",
+            "content" : [
+                "*"
+            ]
+        }
+    ],
+
+    "packages": [
+        "de.quinscape.svensondoc.testmodel"
+    ],
+
+    "shortenTitle": false,
+    "shortenTypes": true,
+    "linkReference" : true
+}
