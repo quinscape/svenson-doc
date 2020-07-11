@@ -28,16 +28,19 @@ Here's an example how to start the executable with exec:java
                     <mainClass>de.quinscape.svensondoc.SvensonDocGenerator</mainClass>
                     <arguments>
 
+                        <!-- location of JSON config file -->
                         <argument>--config</argument>
                         <argument>${project.basedir}/svenson-doc.json</argument>
 
-                        <!-- Documentation for the standard Automaton logic implementations -->
+                        <!-- java source files -->
                         <argument>--source</argument>
                         <argument>${project.basedir}/src/main/java</argument>
 
+                        <!-- output directory -->
                         <argument>--output</argument>
                         <argument>${project.basedir}</argument>
 
+                        <!-- base directory for hand-written markdown snippets -->
                         <argument>--snippets</argument>
                         <argument>${project.basedir}/src/docs/md</argument>
                     </arguments>
@@ -62,8 +65,8 @@ The configuration also happens via JSON
 
 Root node for our JSON data
 
-name | type | description 
------|------|-------------
+property | type | description 
+---------|------|-------------
 shortenTitle | boolean | Whether to shorten type titles
 linkReference | boolean | If true, cross-link reference. For this to work you need to define a document "reference.md" with a single content "*" to auto-generate the reference.
 packages | Set of String | Java packages with JSON POJOs to document.

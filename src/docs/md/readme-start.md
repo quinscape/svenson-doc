@@ -28,16 +28,19 @@ Here's an example how to start the executable with exec:java
                     <mainClass>de.quinscape.svensondoc.SvensonDocGenerator</mainClass>
                     <arguments>
 
+                        <!-- location of JSON config file -->
                         <argument>--config</argument>
                         <argument>${project.basedir}/svenson-doc.json</argument>
 
-                        <!-- Documentation for the standard Automaton logic implementations -->
+                        <!-- java source files -->
                         <argument>--source</argument>
                         <argument>${project.basedir}/src/main/java</argument>
 
+                        <!-- output directory -->
                         <argument>--output</argument>
                         <argument>${project.basedir}</argument>
 
+                        <!-- base directory for hand-written markdown snippets -->
                         <argument>--snippets</argument>
                         <argument>${project.basedir}/src/docs/md</argument>
                     </arguments>
